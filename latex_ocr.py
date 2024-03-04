@@ -4,9 +4,9 @@ import pyperclip
 import rumps
 
 
-class LatexOrc(rumps.App):
+class LatexOrcApplication(rumps.App):
     def __init__(self, name):
-        super(LatexOrc, self).__init__(name=name, icon='./icons/menubar_ogo.png', quit_button="Quit")
+        super(LatexOrcApplication, self).__init__(name=name, icon='./icons/menubar_ogo.png', quit_button="Quit")
         self.ocr_model = LatexOCR()
 
     @rumps.clicked("Start OCR")
@@ -30,4 +30,4 @@ class LatexOrc(rumps.App):
 
 
 if __name__ == "__main__":
-    LatexOrc(name='').run()
+    LatexOrcApplication(name='').run()
