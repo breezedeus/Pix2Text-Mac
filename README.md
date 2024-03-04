@@ -33,6 +33,10 @@ python3 setup.py py2app -A
     - 点击`Start OCR`按钮，识别成功后，会收到通知栏的通知（tip：如果不想接受通知可以在系统设置里关闭通知）
     - 收到通知后，即可粘贴Latex公式到任意地方
 
+### 感谢开源图标作者
+
+- [ELÍAS的个人主页](https://eliasruiz.com/)
+
 ### 如何二次开发
 
 - [macOS菜单栏应用开发：rumps文档](https://rumps.readthedocs.org)
@@ -45,7 +49,3 @@ python3 setup.py py2app -A
 - [macOS菜单栏应用程序：rumps](https://github.com/jaredks/rumps)
 - [macOS应用程序构建：py2app](https://github.com/ronaldoussoren/py2app)
 - [图像处理：pillow](https://github.com/python-pillow/Pillow)
-
-### 开源图标作者
-
-- [ELÍAS的个人主页](https://eliasruiz.com/)
