@@ -1,0 +1,5 @@
+pyperclip~=1.8.2
+rumps~=0.4.0
+pix2tex~=0.1.2
+pillow~=10.2.0
+py2app~=0.28.7
