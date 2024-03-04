@@ -3,17 +3,16 @@ from PIL import ImageGrab
 import pyperclip
 import rumps
 
-model = LatexOCR()
-
 
 class LatexOrc(rumps.App):
     def __init__(self, name):
         super(LatexOrc, self).__init__(name=name, icon='./icons/menubar_ogo.png', quit_button="Quit")
+        self.ocr_model = LatexOCR()
 
     @rumps.clicked("Start OCR")
     def prefs(self, _):
         image = ImageGrab.grabclipboard()
-        latex_string = model(image)
+        latex_string = self.ocr_model(image)
         pyperclip.copy(latex_string)
         rumps.notification("Success!", latex_string, latex_string)
 
