@@ -1,3 +1,4 @@
+setuptools~=63.2.0
 pyperclip~=1.8.2
 rumps~=0.4.0
 pix2tex~=0.1.2
