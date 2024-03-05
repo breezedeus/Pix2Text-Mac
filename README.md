@@ -2,6 +2,13 @@
 
 ### 注意该应用程序仅适用于macOS
 
+### 效果图
+
+- 应用在启动台的效果图
+  ![app_style.png](assets%2Fapp_style.png)
+- 菜单栏应用的效果图
+  ![menu_bar_style.png](assets%2Fmenu_bar_style.png)
+
 ### 如何安装
 
 - 克隆库
