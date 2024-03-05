@@ -6,7 +6,7 @@ import rumps
 
 class LatexOrcApplication(rumps.App):
     def __init__(self, name):
-        super(LatexOrcApplication, self).__init__(name=name, icon='./icons/menubar_ogo.png', quit_button="Quit")
+        super(LatexOrcApplication, self).__init__(name=name, icon='./icons/menu_bar_logo.png', quit_button="Quit")
         self.ocr_model = LatexOCR()
 
     @rumps.clicked("Start OCR")
