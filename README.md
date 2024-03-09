@@ -42,6 +42,13 @@ python3 setup.py py2app -A
     - 点击`Start OCR`按钮，识别成功后，会收到通知栏的通知（tip：如果不想接受通知可以在系统设置里关闭通知）
     - 收到通知后，即可粘贴Latex公式到任意地方
 
+### 注意事项
+
+- 第一次启动应用程序时会下载模型`weights.pth`和`image_resizer`导致第一次启动时间过长，后续启动会恢复到正常速度
+- 模型下载后的存储路径位于`$PYTHON_PATH/site-packages/pix2tex/model/checkpoints`，占用存储空间大小115M左右
+- 应用程序依赖打包应用程序时的python环境，若python环境发成改变（例如：1.打包时使用的虚拟环境被删除 2.打包时使用的环境中的依赖库被删除修改
+  3.电脑上的python环境被彻底卸载等情况），会导致应用程序无法正常使用，需重新打包
+
 ### 感谢开源图标作者
 
 - [ELÍAS的个人主页](https://eliasruiz.com/)
