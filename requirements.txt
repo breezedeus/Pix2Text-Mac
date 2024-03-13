@@ -3,3 +3,4 @@ pix2text==1.0.1
 pyperclip==1.8.2
 rumps==0.4.0
 setuptools==68.2.2
+py2app~=0.28.7
