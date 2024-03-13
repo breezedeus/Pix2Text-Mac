@@ -9,6 +9,8 @@
 
 ### 效果图
 
+- 测试效果
+  ![test.png](assets%2Ftest.png)
 - 应用在启动台的效果图
   ![app_style.png](assets%2Fapp_style.png)
 - 菜单栏应用的效果图
