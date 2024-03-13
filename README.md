@@ -71,7 +71,7 @@ python3 setup.py py2app -A
 
 ### 感谢以下开源作者
 
-- [Pix2Text公式和文字识别：LaTex-OCR](https://github.com/breezedeus/Pix2Text)
+- [Pix2Text公式和文字识别：Pix2Text](https://github.com/breezedeus/Pix2Text)
 - [复制和粘贴剪贴板：pyperclip](https://github.com/asweigart/pyperclip)
 - [macOS菜单栏应用程序：rumps](https://github.com/jaredks/rumps)
 - [macOS应用程序构建：py2app](https://github.com/ronaldoussoren/py2app)
