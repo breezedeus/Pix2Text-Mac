@@ -1,6 +1,5 @@
-setuptools~=63.2.0
-pyperclip~=1.8.2
-rumps~=0.4.0
-pix2tex~=0.1.2
-pillow~=10.2.0
-py2app~=0.28.7
+Pillow==10.2.0
+pix2text==1.0.1
+pyperclip==1.8.2
+rumps==0.4.0
+setuptools==68.2.2
