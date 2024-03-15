@@ -1,0 +1,13 @@
+
+pix2text:
+  text_config:
+    det_model_name: 'ch_PP-OCRv3_det'
+    rec_model_backend: 'onnx'
+    rec_model_name: 'doc-densenet_lite_136-gru'
+  analyzer_config:
+    model_name: 'mfd'
+    model_type: 'yolov7_tiny'
+  formula_config:
+    model_name: 'mfr'
+    model_backend: 'onnx'
+

@@ -7,16 +7,17 @@ Usage:
 
 from setuptools import setup
 
-APP = ['latex_ocr.py']
-DATA_FILES = []
-OPTIONS = {'iconfile': './icons/logo.icns',
-           'plist': {
-               'CFBundleName': 'MyLatexOCR',  # Application Name
-               'CFBundleDisplayName': 'MyLatexOCR',  # Application Display Name
-               'CFBundleVersion': '0.01',  # Application version number
-               'CFBundleIdentifier': 'MyLatexOCR',  # Application package name and unique identifier
-           }
-           }
+APP = ['pix2text_app.py']
+DATA_FILES = [('', ['./config.yaml',],)]
+OPTIONS = {
+    'iconfile': './icons/p2t.icns',
+    'plist': {
+        'CFBundleName': 'Pix2Text',  # Application Name
+        'CFBundleDisplayName': 'Pix2Text',  # Application Display Name
+        'CFBundleVersion': '1.0.2',  # Application version number
+        'CFBundleIdentifier': 'Pix2Text',  # Application package name and unique identifier
+    },
+}
 
 setup(
     app=APP,
