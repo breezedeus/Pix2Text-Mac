@@ -3,7 +3,7 @@
   <div>&nbsp;</div>
 
 [![Discord](https://img.shields.io/discord/1200765964434821260?label=Discord)](https://discord.gg/drT8H85Y)
-[![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fbreezedeus%2FPix2Text&label=Visitors&countColor=%23ff8a65&style=flat&labelStyle=none)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fbreezedeus%2FPix2Text)
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fbreezedeus%2FPix2Text-Mac&label=Visitors&countColor=%23ff8a65&style=flat&labelStyle=none)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fbreezedeus%2FPix2Text-Mac)
 [![license](https://img.shields.io/github/license/breezedeus/pix2text)](./LICENSE)
 [![stars](https://img.shields.io/github/stars/breezedeus/pix2text-mac)](https://github.com/breezedeus/Pix2Text-Mac)
 ![last-commit](https://img.shields.io/github/last-commit/breezedeus/Pix2Text-Mac)
@@ -23,7 +23,7 @@
 
 
 # Pix2Text-Mac: 识别数学公式的 Mac 桌面版应用
-此项目是基于 [Pix2Text](https://github.com/breezedeus/Pix2Text) 实现的 Mac 本地 OCR 应用（无需联网），可以将剪贴板中的数学公式图片识别为其 LaTeX 表示，并将其复制到剪贴板；
+此项目是基于 [**Pix2Text**](https://github.com/breezedeus/Pix2Text) 实现的 Mac 本地 OCR 应用（无需联网），可以将剪贴板中的数学公式图片识别为其 LaTeX 表示，并将其复制到剪贴板；
 同时也支持识别一般图片中的文本（文本 OCR）。
 
 > 注意 ⚠️：该应用程序仅适用于 MacOS 。
