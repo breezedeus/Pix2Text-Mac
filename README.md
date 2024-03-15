@@ -122,6 +122,7 @@ python setup.py py2app -A
 
 ### 感谢以下开源工具
 
+- 本项目初始代码 Fork 自：[horennel/LaTex-OCR_for_macOS](https://github.com/horennel/LaTex-OCR_for_macOS)，感谢此项目作者
 - [公式和文字识别：Pix2Text](https://github.com/breezedeus/Pix2Text)
 - [复制和粘贴剪贴板：pyperclip](https://github.com/asweigart/pyperclip)
 - [macOS菜单栏应用程序：rumps](https://github.com/jaredks/rumps)
