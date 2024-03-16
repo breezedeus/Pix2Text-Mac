@@ -80,6 +80,12 @@ git clone https://github.com/breezedeus/Pix2Text-Mac
 pip install -r requirements.txt
 ```
 
+If you want to recognize text images in languages other than **Simplified Chinese and English**, please run the following command to install additional dependencies:
+
+```bash
+pip install pix2text[multilingual]
+```
+
 - Package the application:
 
 ```bash
