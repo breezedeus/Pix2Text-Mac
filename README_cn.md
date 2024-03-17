@@ -69,9 +69,9 @@
 </div>
 
 
-### 如何安装
+## 如何安装
 
-- 克隆库
+#### 1. 克隆库
 
 ```bash
 git clone https://github.com/breezedeus/Pix2Text-Mac
@@ -83,7 +83,7 @@ git clone https://github.com/breezedeus/Pix2Text-Mac
 git clone https://gitee.com/breezedeus/Pix2Text-Mac
 ```
 
-- 安装依赖环境
+#### 2. 安装依赖环境
 
 ```bash
 pip install -r requirements.txt
@@ -95,7 +95,7 @@ pip install -r requirements.txt
 pip install pix2text[multilingual]
 ```
 
-- 验证安装是否一切正常
+#### 3. 验证安装是否一切正常
 
 使用以下命令验证已安装的 [Pix2Text](https://github.com/breezedeus/Pix2Text) 是否可正常工作：
 
@@ -103,7 +103,7 @@ pip install pix2text[multilingual]
 p2t predict -l en,ch_sim -a mfd -i assets/mixed.jpg
 ```
 
-- 打包应用程序
+#### 4. 打包应用程序
 
 ```bash
 python setup.py py2app -A
@@ -111,7 +111,7 @@ python setup.py py2app -A
 
 - 在生成的 `dist` 文件夹中可以看到应用程序`Pix2Text.app`，双击打开，或者将其移动到`应用程序文件夹`即可。
 
-### 如何使用
+## 如何使用
 
 - 启动程序
     - 启动应用`Pix2Text.app`，可以在菜单栏看到 Pix2Text 应用程序的图标；
@@ -132,7 +132,7 @@ python setup.py py2app -A
   - 收到通知后，即可把结果粘贴至 [Pix2Text 网页版](https://p2t.breezedeus.com) 查看渲染结果。
   - 可通过配置文件 [config.yaml](./config.yaml) 修改 Pix2Text 初始化时的配置信息，如使用哪个模型以及模型所在的路径等。如果购买了[付费版模型](https://www.breezedeus.com/pix2text_cn)（效果更佳），可以参考 [pro-config.yaml](./pro-config.yaml) 内容对 [config.yaml](./config.yaml) 进行修改。
 
-### 注意事项
+## 注意事项
 
 - 第一次启动应用程序时会下载模型和配置文件，导致第一次启动时间过长，后续启动会恢复到正常速度；
 - 模型和配置文件下载后的存储路径位于`～/.cnstd`和`~/.cnocr`和`~/.pix2text`；
@@ -140,7 +140,7 @@ python setup.py py2app -A
   3.电脑上的python环境被彻底卸载等情况），会导致应用程序无法正常使用，需重新打包。
 
 
-### 感谢以下开源工具
+## 感谢以下开源工具
 
 - 本项目初始代码 Fork 自：[horennel/LaTex-OCR_for_macOS](https://github.com/horennel/LaTex-OCR_for_macOS)，感谢此项目作者
 - [公式和文字识别：Pix2Text](https://github.com/breezedeus/Pix2Text)

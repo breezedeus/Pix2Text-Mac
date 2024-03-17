@@ -66,15 +66,15 @@ For example, it can recognize the following image ([assets/text.jpg](./assets/te
 </div>
 
 
-### Installation
+## Installation
 
-- Clone the repository:
+#### 1. Clone the repository:
 
 ```bash
 git clone https://github.com/breezedeus/Pix2Text-Mac
 ```
 
-- Install dependencies:
+#### 2. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -86,7 +86,7 @@ If you want to recognize text images in languages other than **Simplified Chines
 pip install pix2text[multilingual]
 ```
 
-- Verify the installation is working correctly
+#### 3. Verify the installation is working correctly
 
 Use the following command to verify if the installed [Pix2Text](https://github.com/breezedeus/Pix2Text) is working normally:
 
@@ -94,7 +94,7 @@ Use the following command to verify if the installed [Pix2Text](https://github.c
 p2t predict -l en,ch_sim -a mfd -i assets/mixed-en.jpg
 ```
 
-- Package the application:
+#### 4. Package the application:
 
 ```bash
 python setup.py py2app -A
@@ -103,7 +103,7 @@ python setup.py py2app -A
 - You can find the application `Pix2Text.app` in the generated `dist` folder. Double-click to open it, or move it to the `Applications` folder.
 
 
-### How to Use
+## How to Use
 
 - Launch the application
     - Start the `Pix2Text.app` application, and you will see the Pix2Text application icon in the menu bar.
@@ -124,13 +124,13 @@ python setup.py py2app -A
   - After receiving a notification, you can paste the result into the [Pix2Text Online Service](https://p2t.breezedeus.com) to view the rendered result.
   - You can modify the initialization configuration of Pix2Text by editing the configuration file [config.yaml](./config.yaml), such as which model to use and the path to the model. If you have purchased the [premium models](https://www.breezedeus.com/pix2text) (which provides better results), you can refer to the content of [pro-config.yaml](./pro-config.yaml) to modify [config.yaml](./config.yaml).
 
-### Notes
+## Notes
 
 - The first time you start the application, it will download models and configuration files, resulting in a long startup time. Subsequent startups will return to normal speed.
 - The storage path for downloaded models and configuration files is `~/.cnstd`, `~/.cnocr`, and `~/.pix2text`.
 - The application depends on the Python environment used during packaging. If the Python environment changes (e.g., the virtual environment used for packaging is deleted, the dependencies in the environment used for packaging are deleted or modified, or the Python environment on the computer is completely uninstalled), the application may not work properly and needs to be repackaged.
 
-### Acknowledgments
+## Acknowledgments
 
 - The initial code of this project was forked from: [horennel/LaTex-OCR_for_macOS](https://github.com/horennel/LaTex-OCR_for_macOS). Special thanks to the author of this project.
 - [Pix2Text](https://github.com/breezedeus/Pix2Text)
