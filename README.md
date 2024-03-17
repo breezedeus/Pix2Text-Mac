@@ -86,6 +86,14 @@ If you want to recognize text images in languages other than **Simplified Chines
 pip install pix2text[multilingual]
 ```
 
+- Verify the installation is working correctly
+
+Use the following command to verify if the installed [Pix2Text](https://github.com/breezedeus/Pix2Text) is working normally:
+
+```bash
+p2t predict -l en,ch_sim -a mfd -i assets/mixed-en.jpg
+```
+
 - Package the application:
 
 ```bash

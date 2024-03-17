@@ -95,6 +95,14 @@ pip install -r requirements.txt
 pip install pix2text[multilingual]
 ```
 
+- 验证安装是否一切正常
+
+使用以下命令验证已安装的 [Pix2Text](https://github.com/breezedeus/Pix2Text) 是否可正常工作：
+
+```bash
+p2t predict -l en,ch_sim -a mfd -i assets/mixed.jpg
+```
+
 - 打包应用程序
 
 ```bash
