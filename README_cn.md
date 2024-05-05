@@ -11,7 +11,8 @@
 
 [👩🏻‍💻 Pix2Text 网页版](https://p2t.breezedeus.com) |
 [👨🏻‍💻 Pix2Text 在线 Demo](https://huggingface.co/spaces/breezedeus/Pix2Text-Demo) |
-[💬 Contact](https://www.breezedeus.com/join-group)
+[📖 在线文档](https://pix2text.readthedocs.io) |
+[💬 Contact](https://www.breezedeus.com/article/join-group)
 
 </div>
 
@@ -39,7 +40,7 @@
   <img src="./assets/on_menu_bar.jpg" width="250px"/>
 </div>
 
-### 1. `Mixed OCR`：识别既有公式又有文本的混合图片
+### 1. `Text_Formula OCR`：识别既有公式又有文本的混合图片
 可识别既包含数学公式又包含文本的混合图片，识别结果为 Markdown 格式，可把结果粘贴至 [Pix2Text 网页版](https://p2t.breezedeus.com) 查看渲染结果。
 
 如可识别以下图片 ([assets/mixed.jpg](./assets/mixed.jpg))：
@@ -68,6 +69,19 @@
   <img src="./assets/text.jpg" alt="English mixed image" width="300px"/>
 </div>
 
+### 4. `Page OCR`：识别包含复杂排版的页面截图图片
+如果一张图片中包含复杂的排版结构，如多列排版，或者其中包含表格等其他信息，可使用此模式进行识别。此模式会额外加载 `pix2text~=1.1` 中的**版面分析**以及**表格识别**模型识别图片中的所有信息，并把识别结果整合为 Markdown 格式，可把结果粘贴至 [Pix2Text 网页版](https://p2t.breezedeus.com) 查看渲染结果。
+
+识别结果也会存储到本地指定文件夹；文件夹位置可以通过配置文件 [config.yaml](./config.yaml) 中的 `output_md_root_dir` 变量指定，默认为 `/tmp/output_mds` 文件夹。
+同时，解析结果也会存储到本地指定文件夹；文件夹位置可以通过配置文件 [config.yaml](./config.yaml) 中的 `output_debug_dir` 变量指定，默认为 `/tmp/output_debugs` 文件夹。
+可以自行手动更改这两个变量的取值以指定存储位置。
+
+如可识别以下图片 ([assets/page.png](./assets/page.png))：
+
+<div align="center">
+  <img src="./assets/page.png" alt="English mixed image" width="500px"/>
+</div>
+
 
 ## 如何安装
 
@@ -92,7 +106,7 @@ pip install -r requirements.txt
 如果你想识别**简体中文、英文**以外其他语言的文字图片，请运行以下命令安装额外的依赖：
 
 ```bash
-pip install pix2text[multilingual]
+pip install pix2text[multilingual]>=1.1.0.1
 ```
 
 #### 3. 验证安装是否一切正常
@@ -100,7 +114,7 @@ pip install pix2text[multilingual]
 使用以下命令验证已安装的 [Pix2Text](https://github.com/breezedeus/Pix2Text) 是否可正常工作：
 
 ```bash
-p2t predict -l en,ch_sim -a mfd -i assets/mixed.jpg
+p2t predict -l en,ch_sim --resized-shape 768 --file-type page -i assets/page.png -o output-page --save-debug-res output-debug-page
 ```
 
 #### 4. 打包应用程序
@@ -120,13 +134,16 @@ python setup.py py2app -A
     - 使用任意截图软件，例如 `Snipaste`，截图并复制到剪切板。
 - 识别
     - 识别数学公式和文字的混合图片
-        - 点击 `Mixed OCR` 按钮
+        - 点击 `Text_Formula OCR` 按钮
         - 识别成功后，会收到通知栏的通知
   - 识别纯数学公式图片
       - 点击 `Formula OCR` 按钮
       - 识别成功后，会收到通知栏的通知
   - 识别纯文本图片
     - 点击 `Text OCR` 按钮
+    - 识别成功后，会收到通知栏的通知
+  - 识别包含复杂排版的页面截图图片
+    - 点击 `Page OCR` 按钮
     - 识别成功后，会收到通知栏的通知
   - 如果不想接受通知可以在系统设置里关闭通知。
   - 收到通知后，即可把结果粘贴至 [Pix2Text 网页版](https://p2t.breezedeus.com) 查看渲染结果。

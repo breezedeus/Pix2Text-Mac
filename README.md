@@ -11,7 +11,8 @@
 
 [👩🏻‍💻 Pix2Text Online Service](https://p2t.breezedeus.com) |
 [👨🏻‍💻 Pix2Text Online Demo](https://huggingface.co/spaces/breezedeus/Pix2Text-Demo) |
-[💬 Contact](https://www.breezedeus.com/join-group)
+[📖 Online Doc](https://pix2text.readthedocs.io) |
+[💬 Contact](https://www.breezedeus.com/article/join-group)
 
 </div>
 
@@ -38,7 +39,7 @@ After opening the application, you can see the Pix2Text application icon in the 
   <img src="./assets/on_menu_bar.jpg" width="250px"/>
 </div>
 
-### 1. `Mixed OCR`: Recognizing images with both formulas and text
+### 1. `Text_Formula OCR`: Recognizing images with both formulas and text
 This mode can recognize images containing both mathematical formulas and text. The recognition result is in Markdown format, which can be pasted into the [Pix2Text Online Service](https://p2t.breezedeus.com) to view the rendered result.
 
 For example, it can recognize the following image ([assets/mixed-en.jpg](./assets/mixed-en.jpg)):
@@ -65,6 +66,16 @@ For example, it can recognize the following image ([assets/text.jpg](./assets/te
   <img src="./assets/text.jpg" alt="English mixed image" width="300px"/>
 </div>
 
+### 4. `Page OCR`: Recognizing Page Screenshots with Complex Layouts
+If an image contains complex layout structures, such as multi-column layouts or includes tables and other information, you can use this mode for recognition. This mode will additionally load the **Layout Analysis** and **Table Recognition** models from `pix2text~=1.1` to recognize all information in the image and integrate the recognition results into Markdown format. You can paste the results into the [Pix2Text web version](https://p2t.breezedeus.com) to view the rendered results.
+
+The recognition results will also be saved to a specified local folder. The folder location can be specified by the `output_md_root_dir` variable in the configuration file [config.yaml](./config.yaml), which defaults to the `/tmp/output_mds` folder. Additionally, the parsing results will be saved to a specified local folder. The folder location can be specified by the `output_debug_dir` variable in the configuration file [config.yaml](./config.yaml), which defaults to the `/tmp/output_debugs` folder. You can manually change the values of these two variables to specify the storage location.
+
+For example, it can recognize the following image ([assets/page.png](./assets/page.png)):
+
+<div align="center">
+  <img src="./assets/page.png" alt="English mixed image" width="500px"/>
+</div>
 
 ## Installation
 
@@ -83,7 +94,7 @@ pip install -r requirements.txt
 If you want to recognize text images in languages other than **Simplified Chinese and English**, please run the following command to install additional dependencies:
 
 ```bash
-pip install pix2text[multilingual]
+pip install pix2text[multilingual]>=1.1.0.1
 ```
 
 #### 3. Verify the installation is working correctly
@@ -91,7 +102,7 @@ pip install pix2text[multilingual]
 Use the following command to verify if the installed [Pix2Text](https://github.com/breezedeus/Pix2Text) is working normally:
 
 ```bash
-p2t predict -l en,ch_sim -a mfd -i assets/mixed-en.jpg
+p2t predict -l en,ch_sim --resized-shape 768 --file-type page -i assets/page.png -o output-page --save-debug-res output-debug-page
 ```
 
 #### 4. Package the application:
@@ -112,13 +123,16 @@ python setup.py py2app -A
     - Use any screenshot software, such as `Snipaste`, to capture and copy to the clipboard.
 - Recognition
     - Recognize images with both mathematical formulas and text
-        - Click the `Mixed OCR` button.
+        - Click the `Text_Formula OCR` button.
         - After successful recognition, you will receive a notification in the notification center.
   - Recognize images with pure mathematical formulas
       - Click the `Formula OCR` button.
       - After successful recognition, you will receive a notification in the notification center.
   - Recognize images with pure text
     - Click the `Text OCR` button.
+    - After successful recognition, you will receive a notification in the notification center.
+  - To recognize screenshots of pages with complex layouts
+    - Click on the `Page OCR` button.
     - After successful recognition, you will receive a notification in the notification center.
   - If you do not want to receive notifications, you can turn them off in the system settings.
   - After receiving a notification, you can paste the result into the [Pix2Text Online Service](https://p2t.breezedeus.com) to view the rendered result.

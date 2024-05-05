@@ -1,14 +1,20 @@
+output_md_root_dir: '/tmp/output_mds'
+output_debug_dir: '/tmp/output_debugs'
 
 pix2text:
-  text_config:
-    det_model_name: 'ch_PP-OCRv3_det'
-    rec_model_backend: 'onnx'
-    rec_model_name: 'doc-densenet_lite_666-gru_large'
-  analyzer_config:
-    model_name: 'mfd'
-    model_type: 'yolov7'
-    model_fp: '/Users/king/.cnstd/1.2/analysis/mfd-yolov7-epoch224-20230613.pt'
-  formula_config:
-    model_name: 'mfr-pro'
-    model_backend: 'onnx'
-
+  layout:
+    scores_thresh: 0.45
+  text_formula:
+    languages: [en, ch_sim]
+    mfd:
+      model_type: yolov7
+      model_fp: ~/.cnstd/1.2/analysis/mfd-yolov7-epoch224-20230613.pt
+    formula:
+      model_name: mfr-pro
+      model_backend: onnx
+      model_dir: ~/.pix2text/1.0/mfr-pro-onnx
+    text:
+      det_model_name: 'ch_PP-OCRv3_det'
+      rec_model_name: doc-densenet_lite_666-gru_large
+      rec_model_backend: onnx
+      rec_model_fp: ~/.cnocr/2.3/doc-densenet_lite_666-gru_large/cnocr-v2.3-doc-densenet_lite_666-gru_large-epoch=005-ft-model.onnx
