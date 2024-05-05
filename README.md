@@ -136,7 +136,7 @@ python setup.py py2app -A
     - After successful recognition, you will receive a notification in the notification center.
   - If you do not want to receive notifications, you can turn them off in the system settings.
   - After receiving a notification, you can paste the result into the [Pix2Text Online Service](https://p2t.breezedeus.com) to view the rendered result.
-  - You can modify the initialization configuration of Pix2Text by editing the configuration file [config.yaml](./config.yaml), such as which model to use and the path to the model. If you have purchased the [premium models](https://www.breezedeus.com/pix2text) (which provides better results), you can refer to the content of [pro-config.yaml](./pro-config.yaml) to modify [config.yaml](./config.yaml).
+  - You can modify the initialization configuration of Pix2Text by editing the configuration file [config.yaml](./config.yaml), such as which model to use and the path to the model. If you have purchased the [premium models](https://www.breezedeus.com/article/pix2text) (which provides better results), you can refer to the content of [pro-config.yaml](./pro-config.yaml) to modify [config.yaml](./config.yaml).
 
 ## Notes
 
