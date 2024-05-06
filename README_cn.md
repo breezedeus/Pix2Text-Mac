@@ -34,7 +34,7 @@
 
 ## 功能
 
-开启此应用后，可在 Mac 菜单栏看到 [Pix2Text](https://github.com/breezedeus/Pix2Text) 的应用图标，如下图。其中包含了 3 种模式的 OCR。
+开启此应用后，可在 Mac 菜单栏看到 [Pix2Text](https://github.com/breezedeus/Pix2Text) 的应用图标，如下图。其中包含了 4 种模式的 OCR。
 
 <div align="center">
   <img src="./assets/on_menu_bar.jpg" width="250px"/>

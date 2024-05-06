@@ -33,7 +33,7 @@ The initial code of this project was forked from: [horennel/LaTex-OCR_for_macOS]
 
 ## Features
 
-After opening the application, you can see the Pix2Text application icon in the Mac menu bar, as shown below. It includes OCR for three different modes.
+After opening the application, you can see the Pix2Text application icon in the Mac menu bar, as shown below. It includes OCR for 4 different modes.
 
 <div align="center">
   <img src="./assets/on_menu_bar.jpg" width="250px"/>
