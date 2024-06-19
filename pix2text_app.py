@@ -26,6 +26,8 @@ OUTPUT_MD_ROOT_DIR = Path(CONFIG['output_md_root_dir'])
 OUTPUT_MD_ROOT_DIR.mkdir(exist_ok=True)
 OUTPUT_DEBUG_DIR = Path(CONFIG['output_debug_dir'])
 OUTPUT_DEBUG_DIR.mkdir(exist_ok=True)
+TEXT_FORMULA_RESIZED_SHAPE = CONFIG['text_formula_resized_shape']
+PAGE_RESIZED_SHAPE = CONFIG['page_resized_shape']
 
 
 class Pix2TextApplication(rumps.App):
@@ -33,9 +35,7 @@ class Pix2TextApplication(rumps.App):
         super(Pix2TextApplication, self).__init__(
             name=name, icon='./icons/p2t-logo.png', quit_button="Quit"
         )
-        self.p2t = Pix2Text.from_config(
-            **CONFIG['pix2text'],
-        )
+        self.p2t = Pix2Text.from_config(**CONFIG['pix2text'])
 
     @rumps.clicked("Text_Formula OCR")
     def recognize_mixed(self, _):
@@ -43,7 +43,7 @@ class Pix2TextApplication(rumps.App):
         image = ImageGrab.grabclipboard()
         try:
             only_text = self.p2t.recognize_text_formula(
-                image, resized_shape=608, return_text=True
+                image, resized_shape=TEXT_FORMULA_RESIZED_SHAPE, return_text=True
             )  # 也可以使用 `p2t(img_fp, resized_shape=608)` 获得相同的结果
             SUCCESS_NT_FORM['message'] = only_text
             pyperclip.copy(only_text)
@@ -90,10 +90,12 @@ class Pix2TextApplication(rumps.App):
         output_dir = OUTPUT_MD_ROOT_DIR / f'output-{fp_suffix}'
         try:
             page = self.p2t.recognize_page(
-                image, save_debug_res=out_debug_dir
+                image, resized_shape=PAGE_RESIZED_SHAPE, save_debug_res=out_debug_dir
             )
             only_text = page.to_markdown(output_dir)
-            SUCCESS_NT_FORM['message'] = f'saved to {output_dir.absolute()}!\n' + only_text
+            SUCCESS_NT_FORM['message'] = (
+                f'saved to {output_dir.absolute()}!\n' + only_text
+            )
             pyperclip.copy(only_text)
             rumps.notification(**SUCCESS_NT_FORM)
         except Exception as e:

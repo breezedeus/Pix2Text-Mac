@@ -1,5 +1,7 @@
 output_md_root_dir: '/tmp/output_mds'
 output_debug_dir: '/tmp/output_debugs'
+text_formula_resized_shape: 768
+page_resized_shape: 768
 
 pix2text:
   layout:
