@@ -7,7 +7,7 @@ pix2text:
   text_formula:
     languages: [en, ch_sim]
     mfd:
-      model_type: 'yolov7_tiny'
+      model_name: 'mfd'
     formula:
       model_name: mfr
       model_backend: onnx

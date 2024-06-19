@@ -7,12 +7,12 @@ pix2text:
   text_formula:
     languages: [en, ch_sim]
     mfd:
-      model_type: yolov7
-      model_fp: ~/.cnstd/1.2/analysis/mfd-yolov7-epoch224-20230613.pt
+      model_name: mfd-pro
+      model_path: ~/.pix2text/1.1/mfd-pro-onnx/mfd-pro-v20240618.onnx
     formula:
       model_name: mfr-pro
       model_backend: onnx
-      model_dir: ~/.pix2text/1.0/mfr-pro-onnx
+      model_dir: ~/.pix2text/1.1/mfr-pro-onnx
     text:
       det_model_name: 'ch_PP-OCRv3_det'
       rec_model_name: doc-densenet_lite_666-gru_large
